@@ -6,8 +6,9 @@ addEventListener('DOMContentLoaded', async function(){
 
     let html = '';
     for (let song of songs){
+        let songID = song._id;
         html += `
-            <li>${song.title} - ${song.artist}</li>
+            <li>${song.title} - ${song.artist} - <a href="details.html?id=${songID}">Details</a> - <a href="edit.html?id=${songID}">Edit Song</a></li>
         `;
     }
     document.querySelector("#addedsong").innerHTML = html;
